@@ -4,9 +4,9 @@ with open("/Users/fangqi/Documents/snek/pystuff/cryptography/pi.txt") as f:
 check = False
 decrypt = "x"
 key = 1000000
-word = 0
+word = ""
 
-while check == False and key > 1000000 - len(word):
+while check == False and key >= 1000000 - len(word):
     if decrypt == "y":
         decrypt = True
         with open("/Users/fangqi/Documents/snek/pystuff/cryptography/ciphertext.txt", "r") as f:
@@ -49,4 +49,3 @@ def encrypt(word, key, decrypt):
 
 f = open("/Users/fangqi/Documents/snek/pystuff/cryptography/ciphertext.txt", "w")
 f.write(encrypt(word, key, decrypt))
-
