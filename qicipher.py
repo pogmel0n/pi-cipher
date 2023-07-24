@@ -3,8 +3,10 @@ with open("/Users/fangqi/Documents/snek/pystuff/cryptography/pi.txt") as f:
 
 check = False
 decrypt = "x"
+key = 1000000
+word = 0
 
-while check == False:
+while check == False and key > 1000000 - len(word):
     if decrypt == "y":
         decrypt = True
         with open("/Users/fangqi/Documents/snek/pystuff/cryptography/ciphertext.txt", "r") as f:
@@ -19,11 +21,7 @@ while check == False:
     else:
         decrypt = input("decrypt: ").lower()
 
-print(word)
-
 key = int(input("key: "))
-
-print(pi[key:(key + (2 * len(word)))])
 
 def encrypt(word, key, decrypt):
     shiftkey = pi[key:(key + (2 * len(word)))]
@@ -48,8 +46,6 @@ def encrypt(word, key, decrypt):
 
         counter += 1
     return endword
-
-print(pi[key:(key + (2 * len(word)))])
 
 f = open("/Users/fangqi/Documents/snek/pystuff/cryptography/ciphertext.txt", "w")
 f.write(encrypt(word, key, decrypt))
