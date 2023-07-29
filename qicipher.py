@@ -46,6 +46,9 @@ def encrypt(word, key, decrypt):
 
         counter += 1
     return endword
-
-f = open("/Users/fangqi/Documents/snek/pystuff/cryptography/ciphertext.txt", "w")
+if decrypt == True:
+    f = open("plaintext.txt", "w")
+else:
+    f = open("/Users/fangqi/Documents/snek/pystuff/cryptography/ciphertext.txt", "w")
+    
 f.write(encrypt(word, key, decrypt))
